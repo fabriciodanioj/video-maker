@@ -4,12 +4,14 @@ const textRobot = {
 }
 
 async function start() {
-const content = {};
+const content = {
+    maximumSentences: 7
+};
 
 textRobot.userInput(content);
 await textRobot.text(content);
 
-console.log(content);
+console.log(content.sentences);
 };
 
 start();
