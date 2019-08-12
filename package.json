@@ -5,10 +5,12 @@
   "repository": "https://github.com/fabriciodanioj/video-maker.git",
   "author": "fabricio <fabriciodanioj@gmail.com>",
   "license": "MIT",
-  "scripts": { 
+  "scripts": {
     "dev": "node src/index.js"
   },
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "algorithmia": "^0.3.10",
+    "readline-sync": "^1.4.10",
+    "sbd": "^1.0.16"
   }
 }
