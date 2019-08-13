@@ -1,17 +1,18 @@
 const textRobot = {
     userInput: require("./robots/userInput.js"),
-    text: require("./robots/text.js")
+    text: require("./robots/text.js"),
+    state: require("./robots/state.js")
 }
 
 async function start() {
-const content = {
-    maximumSentences: 7
-};
+    
+    textRobot.userInput();
+    await textRobot.text();
 
-textRobot.userInput(content);
-await textRobot.text(content);
+    const content = textRobot.state.load();
 
-console.log(content.sentences);
+   console.dir(content , { depth: null });
+
 };
 
 start();

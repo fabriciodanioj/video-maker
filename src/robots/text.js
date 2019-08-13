@@ -4,6 +4,7 @@ const NaturalLanguageUnderstandingV1 = require("ibm-watson/natural-language-unde
 
 const algorithmiaApiKey = require("../apiKeys/algorithmiaKey.json").apiKey;
 const watsonApiKey = require("../apiKeys/watsonKey.json").apikey;
+const state = require("./state");
 
 
 const nlu = new NaturalLanguageUnderstandingV1({
@@ -12,12 +13,16 @@ const nlu = new NaturalLanguageUnderstandingV1({
     url: "https://gateway-syd.watsonplatform.net/natural-language-understanding/api"
   });
 
-async function textRobot(content) {
+async function textRobot() {
+    const content = state.load();
+
     await downloadContentFromWiki(content);
     sanitizeContent(content);
     breakContentIntoSentences(content);
     limitMaximumSentences(content);
-    await AddKeywords(content)
+    await AddKeywords(content);
+    
+    state.save(content);
 
     async function downloadContentFromWiki(content){
         const algorithmiaAuthenticated = algorithmia(algorithmiaApiKey);
@@ -102,8 +107,6 @@ async function textRobot(content) {
             )}
         )
     };
-
-
 };
 
 
