@@ -24,3 +24,14 @@ File: `watsonKey.json`
     "url": "https://gateway-syd.watsonplatform.net/natural-language-understanding/api"
 }
 ```
+
+# Google Search 
+
+File: `googleApiKey.json`
+
+```
+{
+    "apiKey": "AIzaSyD4mO9EGrRPvvgEeqD0Ly9_IjJKvd7YzVk",
+    "searchEngineId": "014640294895410287836:c4kwfkynwyw"
+  }
+```
