@@ -65,3 +65,6 @@ src/apiKeys/*.json
 
 #conteudo salvo na memoria
 content.json
+
+#imagens salvas na memoria
+content/*.png
