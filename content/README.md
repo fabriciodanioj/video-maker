@@ -1,2 +1,2 @@
 
-Folder for donwloaded or generated content
+Folder for downloaded or generated content
