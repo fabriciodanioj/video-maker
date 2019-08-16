@@ -68,3 +68,5 @@ content.json
 
 #imagens salvas na memoria
 content/*.png
+content/*.jpg
+.DS_Store

@@ -1,4 +1,4 @@
-const textRobot = {
+const robots = {
     userInput: require("./robots/userInput.js"),
     text: require("./robots/text.js"),
     state: require("./robots/state.js"),
@@ -7,13 +7,12 @@ const textRobot = {
 
 async function start() {
     
-    textRobot.userInput();
-    await textRobot.text();
-    await textRobot.images();
+    robots.userInput();
+    await robots.text();
+    await robots.images();
+    const content = robots.state.load();
 
-    const content = textRobot.state.load();
-
-    //  console.dir(content , { depth: null });
+    //console.dir(content , { depth: null });
 
 };
 
