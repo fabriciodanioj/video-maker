@@ -70,3 +70,9 @@ content.json
 content/*.png
 content/*.jpg
 .DS_Store
+
+#videos salvas na memoria
+content/output.mp4
+
+#scripts
+content/after-effects-script.js
