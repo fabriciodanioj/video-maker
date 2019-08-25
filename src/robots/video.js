@@ -103,6 +103,18 @@ async function videoRobot(){
                 6: {
                   size: '1920x400',
                   gravity: 'center'
+                },
+                7: {
+                  size: '1920x1080',
+                  gravity: 'center'
+                },
+                8: {
+                  size: '800x1080',
+                  gravity: 'west'
+                },
+                9: {
+                  size: '1920x400',
+                  gravity: 'center'
                 }
     
             }
@@ -175,9 +187,14 @@ async function videoRobot(){
         console.log("> Renderizando vídeo com node.");
   
         let images = [];
+        
+        images.push({
+          path: `./content/0-resized.png`,
+          caption: `${content.prefixTerm} ${content.searchTerm}`
+        });
+        
   
-        for (
-          let sentenceIndex = 0; sentenceIndex < content.sentences.length; sentenceIndex++) {
+        for (let sentenceIndex = 0; sentenceIndex < content.sentences.length; sentenceIndex++) {
             images.push({
               path: `./content/${sentenceIndex}-resized.png`,
               caption: content.sentences[sentenceIndex].text
@@ -186,12 +203,12 @@ async function videoRobot(){
   
         const videoOptions = {
           fps: 25,
-          loop: 7, // seconds
+          loop: 10, // seconds
           transition: true,
           transitionDuration: 1.5, // seconds
           videoBitrate: 1024,
           videoCodec: "libx264",
-          size: "640x?",
+          size: '640x?',
           audioBitrate: "128k",
           audioChannels: 2,
           format: "mp4",
@@ -199,7 +216,7 @@ async function videoRobot(){
           useSubRipSubtitles: false, // Use ASS/SSA subtitles instead
           subtitleStyle: {
             Fontname: "Verdana",
-            Fontsize: "26",
+            Fontsize: "30",
             PrimaryColour: "11861244",
             SecondaryColour: "11861244",
             TertiaryColour: "11861244",
@@ -209,7 +226,7 @@ async function videoRobot(){
             BorderStyle: "2",
             Outline: "2",
             Shadow: "3",
-            Alignment: "1", // left, middle, right
+            Alignment: "middle", // left, middle, right
             MarginL: "40",
             MarginR: "60",
             MarginV: "40"
@@ -217,7 +234,7 @@ async function videoRobot(){
         };
   
         videoshow(images, videoOptions)
-          //.audio("./templates/1/newsroom.mp3")
+          .audio("audio/reggae.mp3")
           .save("content/output.mp4")
           .on("start", function(command) {
             console.log("> Processo ffmpeg iniciado:", command);
