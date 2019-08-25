@@ -8,6 +8,7 @@ const googleSearchCredentials = require("../apiKeys/googleApiKey.json")
 
 
 async function imagesRobot(){
+    console.log(">Iniciando robô de imagens...")
     content = state.load();
 
     await fetchImagesOfAllSentences(content);
@@ -30,7 +31,7 @@ async function imagesRobot(){
             cx: googleSearchCredentials.searchEngineId,
             q: query,
             searchType: "image",   
-            num: 2
+            num: 3
         });
 
         const imagesUrl = response.data.items.map((item) =>{

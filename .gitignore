@@ -65,13 +65,15 @@ src/apiKeys/*.json
 
 #conteudo salvo na memoria
 content.json
+audio/*.mp3
+
 
 #imagens salvas na memoria
 content/*.png
 content/*.jpg
 .DS_Store
 
-#videos salvas na memoria
+#videos salvos na memoria
 content/output.mp4
 
 #scripts
