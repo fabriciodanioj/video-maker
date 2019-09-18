@@ -23,6 +23,9 @@ async function youtubeRobot() {
         async function startWebServer() {
             return new Promise((resolve, reject) => {
                 const app = express();
+                // Express settings
+                app.disable('x-powered-by');
+
                 const PORT = 5000;
 
                 const server = app.listen(PORT, () => {
